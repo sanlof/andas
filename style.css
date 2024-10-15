@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 24px 'afacad flux', arial, sans-serif;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+h2 { margin: 0 0 1rem; }
+p { margin: 1rem 0; }
+
+@keyframes circle {
+    0% {
+        transform: scale(1);
+    }
+    21% {
+        transform: scale(7);
+        background: lightblue;
+    }
+    58% {
+        transform: scale(7);
+        background: lightblue;
+    }
+    98% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+#circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: circle 19s cubic-bezier(.09,-0.03,.63,.97) infinite;
+    animation-delay: 5s;
+    background: rgba(135, 206, 250, .8);
+    color: #fff;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+div#circle::after {
+    font-size: 2.4rem;
+    content: counter(count);
+    animation: counter 19s infinite;
+    animation-delay: 5s;
+    counter-reset: count 0;
+  }
+  
+@keyframes counter {
+    0%, 5%, 25%, 60% {
+      counter-increment: count 1;
+    }
+    10%, 30%, 70% {
+      counter-increment: count 2;
+    }
+    15%, 35%, 70% {
+      counter-increment: count 3;
+    }
+    20%, 40%, 75% {
+      counter-increment: count 4;
+    }
+    45%, 80% {
+      counter-increment: count 5;
+    }
+    50%, 85% {
+      counter-increment: count 6;
+    }
+    55%, 90% {
+      counter-increment: count 7;
+    }
+    95%, 100% {
+      counter-increment: count 8;
+    }
+  }
+
+
+@keyframes square {
+    0%, 100% {
+        top: 0px; 
+        left: 0px;
+    }
+    25% {
+        top: 0px; 
+        left: calc(100vw - 200px);
+        background: lightblue;
+        width: 200px;
+        height: 200px;
+    }
+    50% {
+        top: calc(100vh - 200px);
+        left: calc(100vw - 200px);
+        background: lightblue;
+        width: 200px;
+        height: 200px;
+    }
+    75% {
+        top: calc(100vh - 100px);
+        left: 0px; 
+        background: lightskyblue;
+        width: 100px;
+        height: 100px;
+    }
+}
+#square {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: lightskyblue;
+    animation: 16s square infinite;
+    animation-delay: 1s;
+    border-radius: 50%;
+    top: 0px; 
+    left: 0px;
+}
+
+button {
+    border: none;
+    background: rgba(139, 69, 19, .9);
+    color: #fff;
+    font-family: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin: 2rem 0 0;
+    padding: 10px 20px;
+    transition: 1s;
+    border-radius: 24px;
+}
+.circle button {
+    width: 500px;
+    position: absolute;
+    right: -170px;
+    top: 50px; 
+    margin: 0;
+    padding: 20px 0;
+    transform: rotate(45deg);
+}
+button:hover {
+    background: sandybrown;
+    transition: 0s linear;
+}
